@@ -1,29 +1,33 @@
-name: Daily Commit
+name: Daily commit by Shivam.barman@gramener.com
 
 on:
   schedule:
-    # This cron syntax runs the action every day at 12:00 PM UTC (adjust to your desired time)
-    - cron: '0 12 * * *'
-  workflow_dispatch:  # This allows you to manually trigger the workflow
+    - cron: '0 12 * * *'  # Runs every day at 12:00 PM UTC
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   commit:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout by Shivam.barman@gramener.com
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # Disable default GitHub Token
 
-      - name: Commit changes by shivam.barman@gramener.com  # This is the step where the email is reflected
+      - name: Configure Git by shivam.barman@gramener.com
         run: |
-          # Set Git user name and email
           git config --global user.name "shivam"
-          git config --global user.email "shivam.barman@gramener.com"
+          git config --global user.email "shivam@gmail.com"
 
-          # Create a new file or modify an existing file
-          echo "Automated commit by GitHub Action" > daily_commit.txt
+      - name: Make Changes by by shivam.barman@gramener.com
+        run: |
+          echo "Automated commit by GitHub Action - $(date)" > daily_commit.txt
 
-          # Stage, commit, and push the changes
+      - name: Commit changes by shivam.barman@gramener.com
+        env:
+          PAT: ${{ secrets.GH_PAT }}
+        run: |
           git add .
           git commit -m "Automated commit by GitHub Action"
-          git push
+          git push https://shivamsinghbarman:${PAT}@github.com/Shivamsinghbarman/actions_repo.git main
