@@ -1,4 +1,4 @@
-name: Daily commit by Shivam.barman@gramener.com
+name: Shivam.barman@gramener.com
 
 on:
   schedule:
@@ -10,21 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout by Shivam.barman@gramener.com
+      - name: Shivam.barman@gramener.com
         uses: actions/checkout@v3
         with:
           persist-credentials: false  # Disable default GitHub Token
 
-      - name: Configure Git by Shivam.barman@gramener.com
+      - name: Shivam.barman@gramener.com
         run: |
           git config --global user.name "shivam"
           git config --global user.email "shivam@gmail.com"
 
-      - name: Make Changes by Shivam.barman@gramener.com
+      - name: Shivam.barman@gramener.com
         run: |
           echo "Automated commit by GitHub Action - $(date)" > daily_commit.txt
 
-      - name: Commit and Push by Shivam.barman@gramener.com
+      - name: Shivam.barman@gramener.com
         env:
           PAT: ${{ secrets.GH_PAT }}
         run: |
