@@ -18,7 +18,7 @@ jobs:
       - name: Shivam.barman@gramener.com
         run: |
           git config --global user.name "shivam"
-          git config --global user.email "shivam@gmail.com"
+          git config --global user.email "shivam.barman@gramener.com"
 
       - name: Shivam.barman@gramener.com
         run: |
