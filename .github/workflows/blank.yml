@@ -15,16 +15,16 @@ jobs:
         with:
           persist-credentials: false  # Disable default GitHub Token
 
-      - name: Configure Git by shivam.barman@gramener.com
+      - name: Configure Git by Shivam.barman@gramener.com
         run: |
           git config --global user.name "shivam"
           git config --global user.email "shivam@gmail.com"
 
-      - name: Make Changes by by shivam.barman@gramener.com
+      - name: Make Changes by Shivam.barman@gramener.com
         run: |
           echo "Automated commit by GitHub Action - $(date)" > daily_commit.txt
 
-      - name: Commit changes by shivam.barman@gramener.com
+      - name: Commit and Push by Shivam.barman@gramener.com
         env:
           PAT: ${{ secrets.GH_PAT }}
         run: |
