@@ -29,5 +29,7 @@ jobs:
           PAT: ${{ secrets.GH_PAT }}
         run: |
           git add .
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "shivam.barman@gramener.com"
           git commit -m "Automated commit by GitHub Action"
           git push https://shivamsinghbarman:${PAT}@github.com/Shivamsinghbarman/actions_repo.git main
